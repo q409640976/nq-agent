@@ -147,7 +147,7 @@ then
 	chmod +s `type -p ping`
 
 	# Configure cron
-	crontab -u nodequery -l 2>/dev/null | { cat; echo "*/3 * * * * bash /etc/nodequery/nq-agent.sh > /etc/nodequery/nq-cron.log 2>&1"; } | crontab -u nodequery -
+	crontab -u root -l 2>/dev/null | { cat; echo "*/3 * * * * bash /etc/nodequery/nq-agent.sh > /etc/nodequery/nq-cron.log 2>&1"; } | crontab -u root -
 	
 	# Show success
 	echo -e "|\n|   Success: The NodeQuery agent has been installed\n|"
